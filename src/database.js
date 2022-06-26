@@ -1,13 +1,13 @@
-const sqlite3 = require("sqlite3").verbose();
+const sqlite3 = require('sqlite3').verbose();
 
-const DB_SOURCE = "db.sqlite";
+const DB_SOURCE = 'db.sqlite';
 
 const database = new sqlite3.Database(DB_SOURCE, (err) => {
   if (err) {
     console.error(err.message);
     throw err;
   } else {
-    console.log("Connected to the SQLite database.");
+    console.log('Connected to the SQLite database.');
     database.run(
       `CREATE TABLE user (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -17,9 +17,9 @@ const database = new sqlite3.Database(DB_SOURCE, (err) => {
             )`,
       (err) => {
         if (err) {
-          console.log("Table already exists");
+          console.log('Table already exists');
         } else {
-          console.log("Table created");
+          console.log('Table created');
         }
       }
     );
